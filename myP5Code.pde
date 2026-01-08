@@ -7,6 +7,9 @@ void setup() {
 var leftX = 150;
 var rightX = 280;
 var sunRadius = 100;
+var redshift = 0;
+var greenshift = 0;
+var blueshift = 0;
 
 
 //🟢Draw Function - Runs on Repeat
@@ -14,7 +17,8 @@ draw = function(){
   noStroke()
 
   //Shapes and Color Go Here
-  background(184, 236, 255);
+  background(184 + redshift, 236 +greenshift, 255+blueshift);
+  //245, 66, 120
 
   // sun
   fill(255, 170, 0);
@@ -36,7 +40,19 @@ draw = function(){
 
   leftX--;
   rightX++;
-  sunRadius += 1.5
+  sunRadius += 1.5;
+  if((184 + redshift)<245)
+  {
+    redshift++;
+  }
+  if((236+greenshift)>66)
+  {
+    greenshift -= 0.8;
+  }
+  if((255 + blueshift)>120)
+  {
+    blueshift -= 0.2;
+  }
 
   if(sunRadius > 160)
   {
@@ -48,6 +64,9 @@ draw = function(){
     leftX = 150;
     rightX = 280;
     sunRadius = 100;
+    redshift = 0;
+    greenshift = 0;
+    blueshift = 0;
   }
   
 }
