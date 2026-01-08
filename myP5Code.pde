@@ -34,8 +34,8 @@ draw = function(){
   ellipse(rightX-62, 100, 70, 60);
   
 
-  leftX -= 1
-  rightX += 1
+  leftX--;
+  rightX++;
   sunRadius += 1.5
 
   if(sunRadius > 160)
